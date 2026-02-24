@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { vigenere, affine, playfair, hill, enigma } from './cryptoUtils';
 import './App.css';
 
@@ -7,6 +7,21 @@ function App() {
   const [key, setKey] = useState('');
   const [cipher, setCipher] = useState('vigenere');
   const [result, setResult] = useState('');
+
+  // Sinkronisasi dengan script index.html
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      return savedTheme === 'dark';
+    }
+    return true; // Default Dark Mode
+  });
+
+  // Terapkan ke HTML saat tombol toggle ditekan
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
 
   const handleProcess = (isEncrypt) => {
     let output = "";
@@ -40,11 +55,21 @@ function App() {
   return (
     <div className="app-wrapper">
       <div className="calc-card">
-        <h2 className="header-title">
-          {/* Logo dipisah agar tidak terkena efek gradien teks transparan */}
-          <span className="icon-pulse">🛡️</span> 
-          <span className="title-text">CryptoCalc</span>
-        </h2>
+        
+        {/* Header dengan Tombol Toggle Tema */}
+        <div className="card-header-wrapper">
+          <h2 className="header-title">
+            <img src="/logo.png" alt="CryptoCalc Logo" className="icon-pulse app-logo" />
+            <span className="title-text">CryptoCalc</span>
+          </h2>
+          <button 
+            className="theme-toggle-btn" 
+            onClick={() => setIsDarkMode(!isDarkMode)}
+            title={isDarkMode ? "Beralih ke Light Mode" : "Beralih ke Dark Mode"}
+          >
+            {isDarkMode ? '☀️' : '🌙'}
+          </button>
+        </div>
         
         <div className="config-grid">
           <div className="form-group">
@@ -104,7 +129,6 @@ function App() {
           </p>
         </div>
 
-        {/* Update Card Developer */}
         <div className="developer-card">
           <div className="dev-header">👨‍💻 Data Developer</div>
           <div className="dev-details">

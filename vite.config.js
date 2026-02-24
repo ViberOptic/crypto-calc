@@ -8,18 +8,19 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'Kalkulator Kripto',
-        short_name: 'KriptoCalc',
+        name: 'CryptoCalc',
+        short_name: 'CryptoCalc',
         description: 'Kalkulator Enkripsi dan Dekripsi Berbasis Web',
-        theme_color: '#ffffff',
+        theme_color: '#ef4444',
+        background_color: '#ffffff',
         icons: [
           {
-            src: 'https://via.placeholder.com/192', // Ganti dengan ikon 192x192 asli jika ada
+            src: '/logo.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'https://via.placeholder.com/512', // Ganti dengan ikon 512x512 asli jika ada
+            src: '/logo.png',
             sizes: '512x512',
             type: 'image/png'
           }
