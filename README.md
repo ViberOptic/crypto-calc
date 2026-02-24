@@ -10,5 +10,5 @@ Kelas: Kriptografi - A
 - Vigenere Cipher
 - Affine Cipher
 - Playfair Cipher
-- Hill Chipher (Matriks 3x3)
+- Hill Cipher (Matriks 3x3)
 - Enigma (Simulasi I-Rotor)
