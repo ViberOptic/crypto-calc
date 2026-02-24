@@ -31,7 +31,7 @@ function App() {
       case 'vigenere': return "Misal: RAHASIA";
       case 'affine': return "Misal: 5,8 (a coprime 26)";
       case 'playfair': return "Misal: MONARCHY";
-      case 'hill': return "Misal: 3,3,2,5 (Matriks 2x2)";
+      case 'hill': return "Misal: 6,24,1,13,16,10,20,17,15 (Matriks 3x3)"; 
       case 'enigma': return "Misal: 0 (Posisi rotor 0-25)";
       default: return "";
     }
@@ -56,7 +56,7 @@ function App() {
               <option value="vigenere">Vigenere Cipher</option>
               <option value="affine">Affine Cipher</option>
               <option value="playfair">Playfair Cipher</option>
-              <option value="hill">Hill Cipher (Matriks 2x2)</option>
+              <option value="hill">Hill Cipher (Matriks 3x3)</option>
               <option value="enigma">Enigma (Simulasi I-Rotor)</option>
             </select>
           </div>
