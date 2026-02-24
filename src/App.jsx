@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { vigenere, affine, playfair, hill, enigma } from './cryptoUtils';
-import './App.css'; // Import file CSS di sini!
+import './App.css';
 
 function App() {
   const [text, setText] = useState('');
@@ -41,7 +41,9 @@ function App() {
     <div className="app-wrapper">
       <div className="calc-card">
         <h2 className="header-title">
-          <span>🛡️</span> CryptoCalc
+          {/* Logo dipisah agar tidak terkena efek gradien teks transparan */}
+          <span className="icon-pulse">🛡️</span> 
+          <span className="title-text">CryptoCalc</span>
         </h2>
         
         <div className="config-grid">
@@ -101,6 +103,26 @@ function App() {
             {result || "Keluaran akan muncul di sini..."}
           </p>
         </div>
+
+        {/* Update Card Developer */}
+        <div className="developer-card">
+          <div className="dev-header">👨‍💻 Data Developer</div>
+          <div className="dev-details">
+            <div className="dev-row">
+              <span className="dev-label">Nama</span>
+              <span className="dev-value">Muhammad Azka Wijasena</span>
+            </div>
+            <div className="dev-row">
+              <span className="dev-label">NIM</span>
+              <span className="dev-value">21120123140125</span>
+            </div>
+            <div className="dev-row">
+              <span className="dev-label">Kelas</span>
+              <span className="dev-value">Kriptografi - A</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
