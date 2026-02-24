@@ -48,6 +48,12 @@
   --dev-border: rgba(255, 255, 255, 0.1);
 }
 
+/* Tambahkan ini untuk menghilangkan glitch area luar */
+html {
+  background-color: var(--bg-main);
+  transition: background-color 0.3s ease;
+}
+
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background: var(--body-bg-gradient);
@@ -57,7 +63,6 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  /* Transisi dinonaktifkan sementara saat pertama kali muat agar tidak ada efek fade in warna latar */
   transition: background 0.3s ease, color 0.3s ease;
 }
 
